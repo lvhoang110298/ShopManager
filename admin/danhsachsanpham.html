@@ -182,7 +182,7 @@
                                         <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
+                                                <i class="fas fa-sear rowch fa-sm"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -344,8 +344,58 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
+                                
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                                    <form>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="col-md-6">
+                                                    <div>
+                                                        <span>Show
+                                                            <select style="width: 35%;" class="custom-select ml-mr-sm-2" id="inlineFormCustomSelect">
+                                                                <option selected>10</option>
+                                                                <option value="1">5</option>
+                                                                <option value="2">15</option>
+                                                                <option value="3">20</option>
+                                                            </select>
+                                                            entries</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" style="display: flex;
+                                            justify-content: flex-end;">
+                                                <div class="col-md-6 input-group mb-3" >
+                                                    <input type="text" class="form-control" placeholder="Seach..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                                    <div class="input-group-append">
+                                                        <button style="background-color: green; color: white;" class="input-group-text">
+                                                            <i class="fa fa-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row d-flex" style="justify-content: space-around;">
+                                            <div class="form-group col-md-3">
+                                                <select id="inputState" class="form-control">
+                                                  <option selected>Danh Muc</option>
+                                                  <option>...</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <select id="inputState" class="form-control">
+                                                  <option selected>Nhan hieu</option>
+                                                  <option>...</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <select id="inputState" class="form-control">
+                                                  <option selected>Trang thai</option>
+                                                  <option>...</option>
+                                                </select>
+                                            </div>  
+                                        </div>
+                                    </form>
+                                    
                                         <tr>
                                             <th>Hình ảnh</th>
                                             <th>Sản phẩm</th>
