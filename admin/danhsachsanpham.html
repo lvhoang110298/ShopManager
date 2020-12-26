@@ -338,72 +338,54 @@
                     <h1 class="h3 mb-2 text-gray-800">Danh sách sản phẩm</h1>
 
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <div class="row">
+                    <div class="card shadow mb-4 col-md-8">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tất cả sản phẩm</h6>
+                            <div class="col-md-12" style="display: flex; justify-content: space-between;">
+                                <h6 class="m-0 font-weight-bold text-primary">Tất cả sản phẩm</h6>
+                                <div class="col-md-2">
+                                    <div class="dropleft">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Cột hiển thị
+                                        </button>
+                                        <div class="dropdown-menu" style="margin-right:5px; width: 300px !important;" aria-labelledby="dropdownMenuButton">
+                                            <div class="content" style="margin: 5px 10px;">
+                                                <button onclick="changeColor(this,'white')" class="btn-block btn-sm btn-primary">Hình ảnh</button>
+                                                <button class="btn-block btn-sm btn-primary">Sản Phẩm</button>
+                                                <button class="btn-block btn-sm btn-primary">Loại</button>
+                                                <button class="btn-block btn-sm btn-primary">Nhãn Hiệu</button>
+                                                <button class="btn-block btn-sm btn-primary">Có Thể Bán</button>
+                                                <button class="btn-block btn-sm btn-primary">Trạng thái</button>
+                                                <button class="btn-block btn-sm btn-primary">Ngày Khởi Tạo</button>
+                                                <hr>
+                                                <div class="d-flex" style="justify-content: center;">
+                                                    <div class="form-check btn-group">
+                                                        <button type="button" class="btn btn-success btn-sm">Áp Dụng</button>
+                                                        <button type="button" class="btn btn-link btn-sm">Trở Về</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                      <div class="card card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <form>
-                                        <div class="form-row">
-                                            <div class="col-md-6">
-                                                <div class="col-md-6">
-                                                    <div>
-                                                        <span>Show
-                                                            <select style="width: 35%;" class="custom-select ml-mr-sm-2" id="inlineFormCustomSelect">
-                                                                <option selected>10</option>
-                                                                <option value="1">5</option>
-                                                                <option value="2">15</option>
-                                                                <option value="3">20</option>
-                                                            </select>
-                                                            entries</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6" style="display: flex;
-                                            justify-content: flex-end;">
-                                                <div class="col-md-6 input-group mb-3" >
-                                                    <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                                    <div class="input-group-append">
-                                                        <form method="get" action="/danhsachsanphamCoCa">
-                                                            <button style="background-color: green; color: white;" class="input-group-text">
-                                                                <a class="fa fa-search" href ='danhsachsanphamCoCa.html'style="color: white;" ></a>
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="form-row d-flex" style="justify-content: space-around;">
-                                            <div class="form-group col-md-3">
-                                                <select id="inputState" label class="form-control">
-                                                  <option selected>Danh Muc</option>
-                                                  <option>Do an</option>
-                                                  <option>Nuoc</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <select id="inputState" class="form-control">
-                                                  <option selected>Nhan hieu</option>
-                                                  <option>Coca</option>
-                                                  <option>Pepsi</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-3">
-                                                <select id="inputState" class="form-control">
-                                                  <option selected>Trang thai</option>
-                                                  <option>Hoan thanh</option>
-                                                  <option>Dang xu li</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-1">
-                                                <button onclick="location.href='danhsachsanphamfilter.html'" type="button" class="btn btn-outline-primary"><a href ='danhsachsanphamCoCa.html'style="color: white;" ></a>Apply</button>
-                                            </div>
-                                            <div class="form-group col-md-1">
-                                                <button onclick="location.href='danhsachsanpham.html'" type="button" class="btn btn-outline-danger"><a href ='danhsachsanphamCoCa.html'style="color: white;" ></a>Clear</button>
-                                            </div>
+
                                         </div>
                                     </form>
                                     
@@ -641,7 +623,68 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card shadow mr-4 mb-4 col-md-3" style=" z-index: 1000; position: fixed; right: 0; top: 20%;">
+                        <div class="form">
+                            <div class="p-0 pt-2 card-body" style="width: 100%;">
+                                <div class="p-0 col-md-12">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                                        <div class="input-group-append">
+                                          <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                        </div>
+                                    </div>                                      
+                                </div>
+                                <div class="p-0 col-md-12">
+                                    <span class="font-weight-bold">Trạng thái: </span>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="radio" aria-label="Checkbox for following text input">
+                                            <span>Đang xử lí</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="radio" aria-label="Checkbox for following text input">
+                                            <span>Đã hoàn thành</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="p-0 col-md-12">
+                                    <span class="font-weight-bold">Loại sản phẩm: </span>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <select id="inputState" class="form-control">
+                                              <option selected>Loại sản phẩm</option>
+                                              <option>Đồ ăn</option>
+                                              <option>Đồ uống</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="p-0 col-md-12">
+                                    <span class="font-weight-bold">Nhãn hiệu: </span>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <select id="inputState" class="form-control">
+                                              <option selected>Nhãn hiệu</option>
+                                              <option>Coca</option>
+                                              <option>Pepsi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="card-footer" style="display: flex; justify-content: center; border-top: none; background-color: white;">
+                                <div class="btn-group">
+                                    <button onclick="window.location.href='danhsachsanphamFilter.html'" type="button" class="btn btn-primary">Lọc</button>
+                                    <button onclick="window.location.href='danhsachsanpham.html'" type="button" class="btn btn-info">Xóa Lọc</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -690,6 +733,11 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script>
+        function changeColor(elmnt,clr) {
+            elmnt.style.color = clr;
+        }
+    </script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
