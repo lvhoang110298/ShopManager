@@ -89,7 +89,7 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Sản phẩm:</h6>
-                        <a class="collapse-item" href="danhsachsanpham.html">Danh sách sản phẩm</a>
+                        <a class="collapse-item" href="danhsachsanphamBasic.html">Danh sách sản phẩm</a>
                         <a class="collapse-item" href="quanlykho.html">Quản lý kho</a>
                         <a class="collapse-item" href="nhaphang.html">Nhập hàng</a>
                         <a class="collapse-item" href="kiemhang.html">Kiểm hàng</a>
@@ -343,40 +343,32 @@
                         <div class="card-header py-3">
                             <div class="col-md-12" style="display: flex; justify-content: space-between;">
                                 <h6 class="m-0 font-weight-bold text-primary">Tất cả sản phẩm</h6>
-                                <div class="col-md-2">
-                                    <div class="dropleft">
+                                <div class="col-md-3">
+                                    <div class="dropleft" style="display: flex;justify-content: flex-end;">
                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Cột hiển thị
                                         </button>
-                                        <div class="dropdown-menu" style="margin-right:5px; width: 300px !important;" aria-labelledby="dropdownMenuButton">
+                                        <div class="dropdown-menu pr-3" style="margin-right:5px; width: 300px !important;" aria-labelledby="dropdownMenuButton">
                                             <div class="content" style="margin: 5px 10px;">
-                                                <button onclick="changeColor(this,'white')" class="btn-block btn-sm btn-primary">Hình ảnh</button>
-                                                <button class="btn-block btn-sm btn-primary">Sản Phẩm</button>
-                                                <button class="btn-block btn-sm btn-primary">Loại</button>
-                                                <button class="btn-block btn-sm btn-primary">Nhãn Hiệu</button>
-                                                <button class="btn-block btn-sm btn-primary">Có Thể Bán</button>
-                                                <button class="btn-block btn-sm btn-primary">Trạng thái</button>
-                                                <button class="btn-block btn-sm btn-primary">Ngày Khởi Tạo</button>
+                                                <button color="blue" name="col" class="btn-block btn-sm btn-primary">Hình ảnh</button>
+                                                <button color="blue" name="col" class="btn-block btn-sm btn-primary">Sản Phẩm</button>
+                                                <button color="blue" name="col" class="btn-block btn-sm btn-primary">Loại</button>
+                                                <button color="blue" name="col" class="btn-block btn-sm btn-primary">Nhãn Hiệu</button>
+                                                <button color="blue" name="col" class="btn-block btn-sm btn-primary">Có Thể Bán</button>
+                                                <button color="blue" name="col" class="btn-block btn-sm btn-primary">Trạng thái</button>
+                                                <button color="blue" name="col" class="btn-block btn-sm btn-primary">Ngày Khởi Tạo</button>
                                                 <hr>
                                                 <div class="d-flex" style="justify-content: center;">
                                                     <div class="form-check btn-group">
-                                                        <button type="button" class="btn btn-success btn-sm">Áp Dụng</button>
-                                                        <button type="button" class="btn btn-link btn-sm">Trở Về</button>
+                                                        <button name="button" type="button" class="btn btn-success btn-sm">Áp Dụng</button>
+                                                        <button name="button" type="button" class="btn btn-link btn-sm">Trở Về</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <button onclick="location.href='danhsachsanphamBasic.html'" id="expandBtn" class="btn btn-primary ml-1"><i class="fas fa-arrows-alt-h"></i></button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="col-md-12">
-                                    <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                      <div class="card card-body">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                                      </div>
-                                    </div>
-                                  </div>
                             </div>
                         </div>
                         <div class="card-body">
@@ -737,6 +729,29 @@
         function changeColor(elmnt,clr) {
             elmnt.style.color = clr;
         }
+        $(document).on('click', '.dropdown-menu', function (e) {
+            if($(e.target).attr('name') == 'button') {
+
+            }else if($(e.target).attr('name') == 'col'){
+                console.log($(e.target).attr('color'));
+                if($(e.target).attr('color') == 'blue') {
+                    $($(e.target)).css('background-color', 'white');
+                    $($(e.target)).css('color', 'black');
+                    $(e.target).attr('color','white');
+                }else if($(e.target).attr('color') == 'white') {
+                    $($(e.target)).css('background-color', 'blue');
+                    $($(e.target)).css('color', 'white');
+                    $(e.target).attr('color','blue');
+                }
+                e.stopPropagation();
+            }
+        });
+        // $(document).on('click', '#expandBtn', function (e) {
+        //     console.log($(e.target))
+        //     var $el = $(e.target);
+        //     console.log($el.find('i'))
+        //     $el.find('i').attr('class','fas fa-search fa-sm');
+        // })
     </script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
