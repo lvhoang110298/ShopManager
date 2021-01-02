@@ -401,7 +401,7 @@
                                         </tr>
                                     </thead>
 
-                                    <tbody>
+                                    <tbody id="tbodydata">
                                         <tr>
                                             <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
                                             <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
@@ -778,3 +778,12 @@
     <script src="js/demo/datatables-demo.js"></script>
 
 </body></html>
+<style>
+    #tbodydata tr{
+        transition:1s
+    }
+    #tbodydata tr:hover{
+        transform: scale(1.05);
+        background-color: rgba(255, 0, 0, 0.2);
+    }
+</style>
