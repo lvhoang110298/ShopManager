@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/res.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -339,6 +340,80 @@
 
                     <!-- DataTales Example -->
                     <div class="row">
+                        <div class="card shadow mr-4 mb-4 col-md-3" id="searchCard">
+                            <div class="form">
+                                <div class="p-0 pt-2 card-body" style="width: 100%;">
+                                    <div class="p-0 col-md-12">
+                                        <div class="input-group mb-3">
+                                            <input value="Coca" type="text" class="form-control" placeholder="Tìm kiếm...">
+                                            <div class="input-group-append">
+                                              <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                            </div>
+                                        </div>                                      
+                                    </div>
+    
+                                    <div class="d-flex p-0 col-md-12">
+                                        <!-- <div class="chip">
+                                            <img src="img_avatar.jpg" alt="Person" width="96" height="96">
+                                            John Doe
+                                            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                                        </div>                                -->
+                                        <div >
+                                            <a href="#" class="badge badge-info">"Coca"<i style="font-size: 16px;" class="fa fa-times"></i></a>
+                                            <a href="#" class="badge badge-info">"Trạng thái : Đã hoàn thành"<i style="font-size: 16px;" class="fa fa-times"></i></a>
+                                            <a href="#" class="badge badge-info">"Loại sản phẩm : Đồ ăn"<i style="font-size: 16px;" class="fa fa-times"></i></a>
+                                            <a href="#" class="badge badge-info">"Nhãn hiệu : Coca"<i style="font-size: 16px;" class="fa fa-times"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="p-0 col-md-12">
+                                        <span class="font-weight-bold">Trạng thái: </span>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="radio" aria-label="Checkbox for following text input">
+                                                <span>Đang xử lí</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input checked type="radio" aria-label="Checkbox for following text input">
+                                                <span>Đã hoàn thành</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="p-0 col-md-12">
+                                        <span class="font-weight-bold">Loại sản phẩm: </span>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <select id="inputState" class="form-control">
+                                                  <option>Loại sản phẩm</option>
+                                                  <option>Đồ ăn</option>
+                                                  <option selected >Đồ uống</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="p-0 col-md-12">
+                                        <span class="font-weight-bold">Nhãn hiệu: </span>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <select id="inputState" class="form-control">
+                                                  <option>Nhãn hiệu</option>
+                                                  <option selected>Coca</option>
+                                                  <option>Pepsi</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="card-footer" style="display: flex; justify-content: center; border-top: none; background-color: white;">
+                                    <div class="btn-group">
+                                        <button onclick="window.location.href='danhsachsanphamFilter.html'" type="button" class="btn btn-primary">Lọc</button>
+                                        <button onclick="window.location.href='danhsachsanpham.html'" type="button" class="btn btn-info">Xóa Lọc</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <div class="card shadow mb-4 col-md-8">
                         <div class="card-header py-3">
                             <div class="col-md-12" style="display: flex; justify-content: space-between;">
@@ -398,301 +473,109 @@
 
                                     <tbody>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                            <td data-label="Có thể bán">200</td>
+                                            <td data-label="Trạng thái"><span style="color:aqua;">Sẵn sàng</span></td>
+                                            <td data-label="Ngày khởi tạo">12/12/2019</td>
+                                        </tr>
+                                        <tr class="bg-danger">
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                            <td data-label="Có thể bán">200</td>
+                                            <td data-label="Trạng thái"><span style="color:aqua;">Đang chuẩn bị</span></td>
+                                            <td data-label="Ngày khởi tạo">12/12/2019</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                            <td data-label="Có thể bán">200</td>
+                                            <td data-label="Trạng thái"><span style="color:aqua;">Sẵn sàng</span></td>
+                                            <td data-label="Ngày khởi tạo">12/12/2019</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                            <td data-label="Có thể bán">200</td>
+                                            <td data-label="Trạng thái"><span style="color:aqua;">Sẵn sàng</span></td>
+                                            <td data-label="Ngày khởi tạo">12/12/2019</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                            <td data-label="Có thể bán">200</td>
+                                            <td data-label="Trạng thái"><span style="color:aqua;">Sẵn sàng</span></td>
+                                            <td data-label="Ngày khởi tạo">12/12/2019</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                            <td data-label="Có thể bán">200</td>
+                                            <td data-label="Trạng thái"><span style="color:aqua;">Sẵn sàng</span></td>
+                                            <td data-label="Ngày khởi tạo">12/12/2019</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                            <td data-label="Có thể bán">200</td>
+                                            <td data-label="Trạng thái"><span style="color:aqua;">Sẵn sàng</span></td>
+                                            <td data-label="Ngày khởi tạo">12/12/2019</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                            <td data-label="Có thể bán">200</td>
+                                            <td data-label="Trạng thái"><span style="color:aqua;">Sẵn sàng</span></td>
+                                            <td data-label="Ngày khởi tạo">12/12/2019</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                            <td data-label="Có thể bán">200</td>
+                                            <td data-label="Trạng thái"><span style="color:aqua;">Sẵn sàng</span></td>
+                                            <td data-label="Ngày khởi tạo">12/12/2019</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                            <td data-label="Có thể bán">200</td>
+                                            <td data-label="Trạng thái"><span style="color:aqua;">Sẵn sàng</span></td>
+                                            <td data-label="Ngày khởi tạo">12/12/2019</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                            <td data-label="Có thể bán">200</td>
+                                            <td data-label="Trạng thái"><span style="color:aqua;">Sẵn sàng</span></td>
+                                            <td data-label="Ngày khởi tạo">12/12/2019</td>
                                         </tr>
 
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                    </div>
-                    <div class="card shadow mr-4 mb-4 col-md-3" style=" z-index: 1000; position: fixed; right: 0; top: 20%;">
-                        <div class="form">
-                            <div class="p-0 pt-2 card-body" style="width: 100%;">
-                                <div class="p-0 col-md-12">
-                                    <div class="input-group mb-3">
-                                        <input value="Coca" type="text" class="form-control" placeholder="Tìm kiếm...">
-                                        <div class="input-group-append">
-                                          <span class="input-group-text"><i class="fa fa-search"></i></span>
-                                        </div>
-                                    </div>                                      
-                                </div>
-
-                                <div class="d-flex p-0 col-md-12">
-                                    <!-- <div class="chip">
-                                        <img src="img_avatar.jpg" alt="Person" width="96" height="96">
-                                        John Doe
-                                        <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-                                    </div>                                -->
-                                    <div >
-                                        <a href="#" class="badge badge-info">"Coca"<i style="font-size: 16px;" class="fa fa-times"></i></a>
-                                        <a href="#" class="badge badge-info">"Trạng thái : Đã hoàn thành"<i style="font-size: 16px;" class="fa fa-times"></i></a>
-                                        <a href="#" class="badge badge-info">"Loại sản phẩm : Đồ ăn"<i style="font-size: 16px;" class="fa fa-times"></i></a>
-                                        <a href="#" class="badge badge-info">"Nhãn hiệu : Coca"<i style="font-size: 16px;" class="fa fa-times"></i></a>
-                                    </div>
-                                </div>
-                                <div class="p-0 col-md-12">
-                                    <span class="font-weight-bold">Trạng thái: </span>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <input type="radio" aria-label="Checkbox for following text input">
-                                            <span>Đang xử lí</span>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input checked type="radio" aria-label="Checkbox for following text input">
-                                            <span>Đã hoàn thành</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="p-0 col-md-12">
-                                    <span class="font-weight-bold">Loại sản phẩm: </span>
-                                    <div class="row">
-                                        <div class="form-group col-md-12">
-                                            <select id="inputState" class="form-control">
-                                              <option>Loại sản phẩm</option>
-                                              <option>Đồ ăn</option>
-                                              <option selected >Đồ uống</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="p-0 col-md-12">
-                                    <span class="font-weight-bold">Nhãn hiệu: </span>
-                                    <div class="row">
-                                        <div class="form-group col-md-12">
-                                            <select id="inputState" class="form-control">
-                                              <option>Nhãn hiệu</option>
-                                              <option selected>Coca</option>
-                                              <option>Pepsi</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-footer" style="display: flex; justify-content: center; border-top: none; background-color: white;">
-                                <div class="btn-group">
-                                    <button onclick="window.location.href='danhsachsanphamFilter.html'" type="button" class="btn btn-primary">Lọc</button>
-                                    <button onclick="window.location.href='danhsachsanpham.html'" type="button" class="btn btn-info">Xóa Lọc</button>
-                                </div>
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
                 </div>
@@ -765,6 +648,7 @@
             }
         });
     </script>
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->

@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/res.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
     <link rel="stylesheet" type="text/css" href="styles/tin/main.css">
@@ -27,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="./styles/tin/lightgallery.css">
     <link rel="stylesheet" href="./element/index.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -345,6 +347,97 @@
 
                     <!-- DataTales Example -->
                     <div class="row">
+                        <div class="card shadow mr-4 mb-4 col-md-3" id="searchCard">
+                            <div class="form">
+                                <div class="p-0 pt-2 card-body" style="width: 100%;">
+                                    <div class="p-0 col-md-12">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                                            <div class="input-group-append">
+                                              <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                            </div>
+                                        </div>                                      
+                                    </div>
+    
+                                    <div class="d-flex p-0 col-md-12">
+                                    </div>
+                                    <div class="p-0 col-md-12">
+                                        <span class="font-weight-bold">Ngày tạo đơn: </span>
+                                        <div class="">
+                                            <div class="col-md-12">
+                                                <div class="slidebar">					
+                                                    <div class="mb-24 Date">
+                                                        <div id="dateBox" class="d-flex px-20 date boxdate">												
+                                                            <div class="date1 ">																
+                                                                <el-date-picker :picker-options="datePickerOptions"
+                                                                    v-model="value1"				        
+                                                                    format = "dd/MM/yyyy"
+                                                                    type="date"
+                                                                    @change="datedenChange"
+                                                                    placeholder="Từ ngày">
+                                                              </el-date-picker>						
+                                                            </div>
+                                                            <div class="ml-1 date2">
+                                                                <el-date-picker :picker-options="datePickerOptions2"
+                                                                    v-model="value2":min="value1"
+                                                                    type="date"					    
+                                                                    format = "dd/MM/yyyy"
+                                                                    @change="dateveChange"
+                                                                    placeholder="Đến ngày">
+                                                                </el-date-picker>
+                                                            </div>	
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-0 col-md-12">
+                                        <span class="font-weight-bold">Trạng thái thanh toán: </span>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="radio" aria-label="Checkbox for following text input">
+                                                <span>Chưa thanh toán</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input checked type="radio" aria-label="Checkbox for following text input">
+                                                <span>Đã thanh toán</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="p-0 col-md-12">
+                                        <span class="font-weight-bold">Giá trị đơn hàng: </span>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <div class="col-md-12 input-group mb-2 mr-sm-2">
+                                                       <div class="col-md-6 moneyBox input-group">
+                                                            <input type="text" class="form-control" placeholder="Từ">
+                                                            <div class="input-group-append">
+                                                                <div class="input-group-text">VNĐ</div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 moneyBox input-group">
+                                                            <input type="text" class="ml-1 form-control" placeholder="Đến">
+                                                            <div class="input-group-append">
+                                                                <div class="input-group-text">VNĐ</div>
+                                                            </div>
+                                                       </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="card-footer" style="display: flex; justify-content: center; border-top: none; background-color: white;">
+                                    <div class="btn-group">
+                                        <button onclick="window.location.href='danhsachdonhangFilter.html'" type="button" class="btn btn-primary">Lọc</button>
+                                        <button onclick="window.location.href='danhsachdonhangSearch.html'" type="button" class="btn btn-info">Xóa Lọc</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
                     <div class="card shadow mb-4 col-md-8">
                         <div class="card-header py-3">
                             <div class="col-md-12" style="display: flex; justify-content: space-between;">
@@ -365,7 +458,7 @@
                                                 <hr>
                                                 <div class="d-flex" style="justify-content: center;">
                                                     <div class="form-check btn-group">
-                                                        <button type="button" class="btn btn-success btn-sm">Áp Dụng</button>
+                                                        <button onclick="location.href='danhsachdonhangCol.html'" type="button" class="btn btn-success btn-sm">Áp Dụng</button>
                                                         <button type="button" class="btn btn-link btn-sm">Trở Về</button>
                                                     </div>
                                                 </div>
@@ -608,93 +701,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card shadow mr-4 mb-4 col-md-3" style=" z-index: 1000; position: fixed; right: 0; top: 20%;">
-                        <div class="form">
-                            <div class="p-0 pt-2 card-body" style="width: 100%;">
-                                <div class="p-0 col-md-12">
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Tìm kiếm...">
-                                        <div class="input-group-append">
-                                          <span class="input-group-text"><i class="fa fa-search"></i></span>
-                                        </div>
-                                    </div>                                      
-                                </div>
-
-                                <div class="d-flex p-0 col-md-12">
-                                </div>
-                                <div class="p-0 col-md-12">
-                                    <span class="font-weight-bold">Ngày tạo đơn: </span>
-                                    <div class="">
-                                        <div class="col-md-12">
-                                            <div class="slidebar">					
-                                                <div class="mb-24 Date">
-                                                    <div class="d-flex px-20 date boxdate">												
-                                                        <div class="date1">																
-                                                            <el-date-picker :picker-options="datePickerOptions"
-                                                                v-model="value1"				        
-                                                                format = "dd/MM/yyyy"
-                                                                type="date"
-                                                                @change="datedenChange"
-                                                                placeholder="Từ ngày">
-                                                          </el-date-picker>						
-                                                        </div>
-                                                        <div class="ml-1 date2">
-                                                            <el-date-picker :picker-options="datePickerOptions2"
-                                                                v-model="value2":min="value1"
-                                                                type="date"					    
-                                                                format = "dd/MM/yyyy"
-                                                                @change="dateveChange"
-                                                                placeholder="Đến ngày">
-                                                            </el-date-picker>
-                                                        </div>	
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="p-0 col-md-12">
-                                    <span class="font-weight-bold">Trạng thái thanh toán: </span>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <input type="radio" aria-label="Checkbox for following text input">
-                                            <span>Chưa thanh toán</span>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input checked type="radio" aria-label="Checkbox for following text input">
-                                            <span>Đã thanh toán</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="p-0 col-md-12">
-                                    <span class="font-weight-bold">Giá trị đơn hàng: </span>
-                                    <div class="row">
-                                        <div class="form-group col-md-12">
-                                            <div class="col-md-12 input-group mb-2 mr-sm-2">
-                                                    <input type="text" class="form-control" placeholder="Từ">
-                                                    <div class="input-group-append">
-                                                        <div class="input-group-text">VNĐ</div>
-                                                    </div>
-                                                    <input type="text" class="ml-1 form-control" placeholder="Đến">
-                                                    <div class="input-group-append">
-                                                        <div class="input-group-text">VNĐ</div>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-footer" style="display: flex; justify-content: center; border-top: none; background-color: white;">
-                                <div class="btn-group">
-                                    <button onclick="window.location.href='danhsachdonhangFilter.html'" type="button" class="btn btn-primary">Lọc</button>
-                                    <button onclick="window.location.href='danhsachdonhangSearch.html'" type="button" class="btn btn-info">Xóa Lọc</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+                    
                 </div>
                 </div>
                 <!-- /.container-fluid -->

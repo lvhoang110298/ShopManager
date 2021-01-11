@@ -339,6 +339,66 @@
 
                     <!-- DataTales Example -->
                     <div class="row">
+                        <div id="searchCard" class="card shadow mr-4 mb-4 col-md-3 col-sm-12" style="">
+                            <div class="form">
+                                <div class="p-0 pt-2 card-body" style="width: 100%;">
+                                    <div class="p-0 col-md-12">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                                            <div class="input-group-append">
+                                              <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                            </div>
+                                        </div>                                      
+                                    </div>
+                                    <div class="p-0 col-md-12">
+                                        <span class="font-weight-bold">Trạng thái: </span>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="radio" aria-label="Checkbox for following text input">
+                                                <span>Đang xử lí</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="radio" aria-label="Checkbox for following text input">
+                                                <span>Đã hoàn thành</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="p-0 col-md-12">
+                                        <span class="font-weight-bold">Loại sản phẩm: </span>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <select id="inputState" class="form-control">
+                                                  <option selected>Loại sản phẩm</option>
+                                                  <option>Đồ ăn</option>
+                                                  <option>Đồ uống</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="p-0 col-md-12">
+                                        <span class="font-weight-bold">Nhãn hiệu: </span>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <select id="inputState" class="form-control">
+                                                  <option selected>Nhãn hiệu</option>
+                                                  <option>Coca</option>
+                                                  <option>Pepsi</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="card-footer" style="display: flex; justify-content: center; border-top: none; background-color: white;">
+                                    <div class="btn-group">
+                                        <button onclick="window.location.href='danhsachsanphamFilter.html'" type="button" class="btn btn-primary">Lọc</button>
+                                        <button onclick="window.location.href='danhsachsanpham.html'" type="button" class="btn btn-info">Xóa Lọc</button>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>    
                     <div class="card shadow mb-4 col-md-8">
                         <div class="card-header py-3">
                             <div class="col-md-12" style="display: flex; justify-content: space-between;">
@@ -373,7 +433,6 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
@@ -383,158 +442,110 @@
                                             <th>Nhãn hiệu</th>
                                         </tr>
                                     </thead>
+                                    <tbody id="tbodydata">
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Hình ảnh" style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
+                                            <td data-label="Sản phẩm"><span style="color:#08f;">Bánh sampa (champagne) s</span></td>
+                                            <td data-label="Loại">Đồ ăn</td>
+                                            <td data-label="Nhãn hiệu">Shabico</td>
+                                        </tr>
 
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <div class="card shadow mr-4 mb-4 col-md-3" style=" z-index: 1000; position: fixed; right: 0; top: 20%;">
-                        <div class="form">
-                            <div class="p-0 pt-2 card-body" style="width: 100%;">
-                                <div class="p-0 col-md-12">
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Tìm kiếm...">
-                                        <div class="input-group-append">
-                                          <span class="input-group-text"><i class="fa fa-search"></i></span>
-                                        </div>
-                                    </div>                                      
-                                </div>
-                                <div class="p-0 col-md-12">
-                                    <span class="font-weight-bold">Trạng thái: </span>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <input type="radio" aria-label="Checkbox for following text input">
-                                            <span>Đang xử lí</span>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="radio" aria-label="Checkbox for following text input">
-                                            <span>Đã hoàn thành</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="p-0 col-md-12">
-                                    <span class="font-weight-bold">Loại sản phẩm: </span>
-                                    <div class="row">
-                                        <div class="form-group col-md-12">
-                                            <select id="inputState" class="form-control">
-                                              <option selected>Loại sản phẩm</option>
-                                              <option>Đồ ăn</option>
-                                              <option>Đồ uống</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="p-0 col-md-12">
-                                    <span class="font-weight-bold">Nhãn hiệu: </span>
-                                    <div class="row">
-                                        <div class="form-group col-md-12">
-                                            <select id="inputState" class="form-control">
-                                              <option selected>Nhãn hiệu</option>
-                                              <option>Coca</option>
-                                              <option>Pepsi</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-footer" style="display: flex; justify-content: center; border-top: none; background-color: white;">
-                                <div class="btn-group">
-                                    <button onclick="window.location.href='danhsachsanphamFilter.html'" type="button" class="btn btn-primary">Lọc</button>
-                                    <button onclick="window.location.href='danhsachsanpham.html'" type="button" class="btn btn-info">Xóa Lọc</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+                    
                 </div>
                 </div>
                 <!-- /.container-fluid -->
@@ -585,6 +596,12 @@
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script>
+        $(document).ready(function () {
+            // DataTable( {
+            //  responsive: true
+            // }); 
+            // console.log($('#dataTable').);
+        });
         function changeColor(elmnt,clr) {
             elmnt.style.color = clr;
         }
@@ -605,17 +622,13 @@
                 e.stopPropagation();
             }
         });
-        // $(document).on('click', '#expandBtn', function (e) {
-        //     console.log($(e.target))
-        //     var $el = $(e.target);
-        //     console.log($el.find('i'))
-        //     $el.find('i').attr('class','fas fa-search fa-sm');
-        // })
     </script>
+        <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
@@ -628,3 +641,110 @@
     <script src="js/demo/datatables-demo.js"></script>
 
 </body></html>
+<style>
+    table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  /* background-color: #f8f8f8; */
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  
+  .table-bordered {
+      border: none !important;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    display: block;
+    font-size: .8em;
+    border: none !important;
+    text-align: right;
+    border-bottom: 1px solid #ddd !important;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+  #searchCard {
+      position: relative !important;
+      margin-right: 0 !important;
+  }
+}
+    #tbodydata tr{
+        transition:1s
+    }
+    #tbodydata tr:hover{
+        transform: scale(1.05);
+        background-color: rgba(255, 0, 0, 0.2);
+    }
+    #searchCard {
+        z-index: 1000;
+        position: fixed; 
+        right: 0; top: 20%;
+    }
+</style>
