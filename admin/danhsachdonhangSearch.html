@@ -19,8 +19,14 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="styles/tin/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/tin/responsive.css">
+    <link rel="stylesheet" type="text/css" href="styles/tin/slick.css">
+    <link rel="stylesheet" type="text/css" href="styles/tin/slick-theme.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="./styles/tin/lightgallery.css">
+    <link rel="stylesheet" href="./element/index.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body id="page-top">
@@ -89,7 +95,7 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Sản phẩm:</h6>
-                        <a class="collapse-item" href="danhsachsanpham.html">Danh sách sản phẩm</a>
+                        <a class="collapse-item" href="danhsachsanphamBasic.html">Danh sách sản phẩm</a>
                         <a class="collapse-item" href="quanlykho.html">Quản lý kho</a>
                         <a class="collapse-item" href="nhaphang.html">Nhập hàng</a>
                         <a class="collapse-item" href="kiemhang.html">Kiểm hàng</a>
@@ -125,18 +131,9 @@
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBaocao" aria-expanded="true" aria-controls="collapseBaocao">
+                <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Báo cáo</span></a>
-                    <div id="collapseBaocao" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Báo cáo</h6>
-                            <a class="collapse-item" href="baocaotong.html">Báo cáo tổng</a>
-                            <a class="collapse-item" href="baocaothangnew.html">Báo cáo doanh thu ngày</a>
-                            <a class="collapse-item" href="baocaonam.html">Báo cáo doanh thu tháng</a>
-                            <a class="collapse-item" href="baocaonhieunam.html">Báo cáo doanh năm</a>
-                        </div>
-                    </div>
             </li>
 
             <!-- Divider -->
@@ -348,7 +345,7 @@
 
                     <!-- DataTales Example -->
                     <div class="row">
-                    <div class="card shadow mb-4 col-md-12">
+                    <div class="card shadow mb-4 col-md-8">
                         <div class="card-header py-3">
                             <div class="col-md-12" style="display: flex; justify-content: space-between;">
                                 <h6 class="m-0 font-weight-bold text-primary">Tất cả sản phẩm</h6>
@@ -357,265 +354,337 @@
                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Cột hiển thị
                                         </button>
-                                        <div class="dropdown-menu pr-3" style="margin-right:5px; width: 300px !important;" aria-labelledby="dropdownMenuButton">
+                                        <div class="dropdown-menu" style="margin-right:5px; width: 300px !important;" aria-labelledby="dropdownMenuButton">
                                             <div class="content" style="margin: 5px 10px;">
-                                                <button color="blue" name="col" class="btn-block btn btn-primary">Hình ảnh</button>
-                                                <button color="blue" name="col" class="btn-block btn btn-primary">Sản Phẩm</button>
-                                                <button color="blue" name="col" class="btn-block btn btn-primary">Loại</button>
-                                                <button color="blue" name="col" class="btn-block btn btn-primary">Nhãn Hiệu</button>
-                                                <button color="blue" name="col" class="btn-block btn btn-primary">Có Thể Bán</button>
-                                                <button color="blue" name="col" class="btn-block btn btn-primary">Trạng thái</button>
-                                                <button color="blue" name="col" class="btn-block btn btn-primary">Ngày Khởi Tạo</button>
+                                                <button color="blue" name="col" class="btn-block btn btn-primary">Mã đơn hàng</button>
+                                                <button color="blue" name="col" class="btn-block btn btn-primary">Ngày tạo đơn</button>
+                                                <button color="blue" name="col" class="btn-block btn btn-primary">Tên khách hàng</button>
+                                                <button color="blue" name="col" class="btn-block btn btn-primary">Trạng thái đơn hàng</button>
+                                                <button color="blue" name="col" class="btn-block btn btn-primary">Thanh toán</button>
+                                                <button color="blue" name="col" class="btn-block btn btn-primary">Khách phải trả</button>
                                                 <hr>
                                                 <div class="d-flex" style="justify-content: center;">
                                                     <div class="form-check btn-group">
-                                                        <button onclick="location.href='danhsachsanphamCol.html'" name="button" type="button" class="btn btn-success btn-sm">Áp Dụng</button>
-                                                        <button name="button" type="button" class="btn btn-link btn-sm">Trở Về</button>
+                                                        <button type="button" class="btn btn-success btn-sm">Áp Dụng</button>
+                                                        <button type="button" class="btn btn-link btn-sm">Trở Về</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <button onclick="location.href='danhsachsanpham.html'" id="expandBtn" class="btn btn-primary ml-1"><i class="fas fa-search fa-sm"></i></button>
+                                        <button onclick="location.href='danhsachsanphamBasic.html'" id="expandBtn" class="btn btn-primary ml-1"><i class="fas fa-arrows-alt-h"></i></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
+                                
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Hình ảnh</th>
-                                            <th>Sản phẩm</th>
-                                            <th>Loại</th>
-                                            <th>Nhãn hiệu</th>
-                                            <th>Có thể bán</th>
-                                            <th>Trạng thái</th>
-                                            <th>Ngày khởi tạo</th>
+                                            <th>Mã đơn hàng</th>
+                                            <th>Ngày tạo đơn</th>
+                                            <th>Tên khách hàng</th>
+                                            <th>Trạng thái đơn hàng</th>
+                                            <th>Thanh toán</th>
+                                            <th>Khách phải trả</th>
                                         </tr>
                                     </thead>
-                                    <tbody id= "tbodydata">
+
+                                    <tbody id="tbodydata">
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span style="color:orange;">Đang giao dịch</span></td>
+                                            <td>Thanh toán toàn bộ</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: center;"><img src="https://sapo.dktcdn.net/100/210/490/variants/88327ddd-6433-40c2-b4fa-972fa0fc7aad.jpg" height="50"></td>
-                                            <td><span style="color:#08f;">Bánh sampa (champagne) Hoàng Mỹ Gia 300g</span></td>
-                                            <td>Đồ ăn</td>
-                                            <td>Shabico</td>
-                                            <td>200</td>
-                                            <td><span style="color:aqua;">Đang giao dịch</span></td>
-                                            <td>12/12/2019</td>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
                                         </tr>
+                                        <tr>
+                                            <td>DENDIMON</td>
+                                            <td>2011/04/25</td>
+                                            <td>Donal Trump</td>
+                                            <td><span>Hoàn thành</span></td>
+                                            <td>Chưa thanh toán</td>
+                                            <td>$320,800</td>
+                                        </tr>
+                                        
 
                                     </tbody>
                                 </table>
                             </div>
                         </div>
+                    </div>
+                    <div class="card shadow mr-4 mb-4 col-md-3" style=" z-index: 1000; position: fixed; right: 0; top: 20%;">
+                        <div class="form">
+                            <div class="p-0 pt-2 card-body" style="width: 100%;">
+                                <div class="p-0 col-md-12">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                                        <div class="input-group-append">
+                                          <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                        </div>
+                                    </div>                                      
+                                </div>
+
+                                <div class="d-flex p-0 col-md-12">
+                                </div>
+                                <div class="p-0 col-md-12">
+                                    <span class="font-weight-bold">Ngày tạo đơn: </span>
+                                    <div class="">
+                                        <div class="col-md-12">
+                                            <div class="slidebar">					
+                                                <div class="mb-24 Date">
+                                                    <div class="d-flex px-20 date boxdate">												
+                                                        <div class="date1">																
+                                                            <el-date-picker :picker-options="datePickerOptions"
+                                                                v-model="value1"				        
+                                                                format = "dd/MM/yyyy"
+                                                                type="date"
+                                                                @change="datedenChange"
+                                                                placeholder="Từ ngày">
+                                                          </el-date-picker>						
+                                                        </div>
+                                                        <div class="ml-1 date2">
+                                                            <el-date-picker :picker-options="datePickerOptions2"
+                                                                v-model="value2":min="value1"
+                                                                type="date"					    
+                                                                format = "dd/MM/yyyy"
+                                                                @change="dateveChange"
+                                                                placeholder="Đến ngày">
+                                                            </el-date-picker>
+                                                        </div>	
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-0 col-md-12">
+                                    <span class="font-weight-bold">Trạng thái thanh toán: </span>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="radio" aria-label="Checkbox for following text input">
+                                            <span>Chưa thanh toán</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input checked type="radio" aria-label="Checkbox for following text input">
+                                            <span>Đã thanh toán</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="p-0 col-md-12">
+                                    <span class="font-weight-bold">Giá trị đơn hàng: </span>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <div class="col-md-12 input-group mb-2 mr-sm-2">
+                                                    <input type="text" class="form-control" placeholder="Từ">
+                                                    <div class="input-group-append">
+                                                        <div class="input-group-text">VNĐ</div>
+                                                    </div>
+                                                    <input type="text" class="ml-1 form-control" placeholder="Đến">
+                                                    <div class="input-group-append">
+                                                        <div class="input-group-text">VNĐ</div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer" style="display: flex; justify-content: center; border-top: none; background-color: white;">
+                                <div class="btn-group">
+                                    <button onclick="window.location.href='danhsachdonhangFilter.html'" type="button" class="btn btn-primary">Lọc</button>
+                                    <button onclick="window.location.href='danhsachdonhangSearch.html'" type="button" class="btn btn-info">Xóa Lọc</button>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 </div>
@@ -687,12 +756,6 @@
                 e.stopPropagation();
             }
         });
-        // $(document).on('click', '#expandBtn', function (e) {
-        //     console.log($(e.target))
-        //     var $el = $(e.target);
-        //     console.log($el.find('i'))
-        //     $el.find('i').attr('class','fas fa-search fa-sm');
-        // })
     </script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -708,7 +771,16 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
-
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-bar-demo.js"></script>
+    <script type="text/javascript" src="./element/vue.js"></script>
+    <script type="text/javascript" src="./element/index.js"></script>
+    <script type="text/javascript" src="./element/js/vi.js"></script>
+		
+    <script type="text/javascript" src="./element/js/slick.min.js"></script>
+    <script type="text/javascript" src="./element/js/lightgallery-all.min.js"></script>
+    <script type="text/javascript" src="./element/js/custom.js"></script>
 </body></html>
 <style>
     #tbodydata tr{
