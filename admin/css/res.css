@@ -32,12 +32,22 @@ table {
     color: black;
     font-weight: bold;
   }
+
+  #dropdownMenuButton i{
+    display: none;
+  }
   
   @media screen and (max-width: 600px) {
     table {
       border: 0;
     }
 
+    #dropdownMenuButton i{
+      display: inline-block;
+    }
+    #dropdownMenuButton .text{
+      display: none !important;
+  }
     #dateBox {
       display: flow-root !important;
     }

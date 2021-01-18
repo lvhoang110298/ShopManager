@@ -37,7 +37,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -457,7 +457,8 @@
                                 <div class="col-md-3">
                                     <div class="dropleft" style="display: flex;justify-content: flex-end;">
                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Cột hiển thị
+                                            <span class="text">Cột hiển thị</span>
+                                            <i class="icon fa fa-columns"></i>
                                         </button>
                                         <div class="dropdown-menu pr-3" style="margin-right:5px; width: 300px !important;" aria-labelledby="dropdownMenuButton">
                                             <div class="content" style="margin: 5px 10px;">
@@ -490,51 +491,45 @@
                                             <th>Ngày tạo đơn</th>
                                             <th>Tên khách hàng</th>
                                             <th>Trạng thái đơn hàng</th>
-                                            <th>Thanh toán</th>
-                                            <th>Khách phải trả</th>
+                                            <th>Giá trị đơn hàng</th>
                                         </tr>
                                     </thead>
 
-                                    <tbody>
+                                    <tbody id="tbodydata">
                                         <tr>
-                                            <td><p><span style="background-color: chartreuse;">DENDI</span>MON</p></td>
-                                            <td>01/02/2021</td>
-                                            <td>Donal Trump</td>
-                                            <td><span style="color:orange;">Đang giao dịch</span></td>
-                                            <td>Thanh toán toàn bộ</td>
-                                            <td>320,800 VNĐ</td>
+                                            <td data-label="Mã đơn hàng"><p><span style="background-color: chartreuse;">DENDI</span>MON</p></td>
+                                            <td data-label="Ngày tạo đơn">01/02/2021</td>
+                                            <td data-label="Tên khách hàng">Donal Trump</td>
+                                            <td data-label="Tráng thái đơn hàng"><span style="color:orange;">Đang giao dịch</span></td>
+                                            <td data-label="Giá trị đơn hàng">320,800 VNĐ</td>
                                         </tr>
                                         <tr>
-                                            <td><p><span style="background-color: chartreuse;">DENDI</span>MON</p></td>
-                                            <td>01/02/2021</td>
-                                            <td>Donal Trump</td>
-                                            <td><span style="color:orange;">Đang giao dịch</span></td>
-                                            <td>Thanh toán toàn bộ</td>
-                                            <td>320,800 VNĐ</td>
+                                            <td data-label="Mã đơn hàng"><p><span style="background-color: chartreuse;">DENDI</span>MON</p></td>
+                                            <td data-label="Ngày tạo đơn">01/02/2021</td>
+                                            <td data-label="Tên khách hàng">Donal Trump</td>
+                                            <td data-label="Tráng thái đơn hàng"><span style="color:orange;">Đang giao dịch</span></td>
+                                            <td data-label="Giá trị đơn hàng">320,800 VNĐ</td>
                                         </tr>
                                         <tr>
-                                            <td><p><span style="background-color: chartreuse;">DENDI</span>MON</p></td>
-                                            <td>01/02/2021</td>
-                                            <td>Donal Trump</td>
-                                            <td><span style="color:orange;">Đang giao dịch</span></td>
-                                            <td>Thanh toán toàn bộ</td>
-                                            <td>320,800 VNĐ</td>
+                                            <td data-label="Mã đơn hàng"><p><span style="background-color: chartreuse;">DENDI</span>MON</p></td>
+                                            <td data-label="Ngày tạo đơn">01/02/2021</td>
+                                            <td data-label="Tên khách hàng">Donal Trump</td>
+                                            <td data-label="Tráng thái đơn hàng"><span style="color:orange;">Đang giao dịch</span></td>
+                                            <td data-label="Giá trị đơn hàng">320,800 VNĐ</td>
                                         </tr>
                                         <tr>
-                                            <td><p><span style="background-color: chartreuse;">DENDI</span>MON</p></td>
-                                            <td>01/02/2021</td>
-                                            <td>Donal Trump</td>
-                                            <td><span style="color:orange;">Đang giao dịch</span></td>
-                                            <td>Thanh toán toàn bộ</td>
-                                            <td>320,800 VNĐ</td>
+                                            <td data-label="Mã đơn hàng"><p><span style="background-color: chartreuse;">DENDI</span>MON</p></td>
+                                            <td data-label="Ngày tạo đơn">01/02/2021</td>
+                                            <td data-label="Tên khách hàng">Donal Trump</td>
+                                            <td data-label="Tráng thái đơn hàng"><span style="color:orange;">Đang giao dịch</span></td>
+                                            <td data-label="Giá trị đơn hàng">320,800 VNĐ</td>
                                         </tr>
                                         <tr>
-                                            <td><p><span style="background-color: chartreuse;">DENDI</span>MON</p></td>
-                                            <td>01/02/2021</td>
-                                            <td>Donal Trump</td>
-                                            <td><span style="color:orange;">Đang giao dịch</span></td>
-                                            <td>Thanh toán toàn bộ</td>
-                                            <td>320,800 VNĐ</td>
+                                            <td data-label="Mã đơn hàng"><p><span style="background-color: chartreuse;">DENDI</span>MON</p></td>
+                                            <td data-label="Ngày tạo đơn">01/02/2021</td>
+                                            <td data-label="Tên khách hàng">Donal Trump</td>
+                                            <td data-label="Tráng thái đơn hàng"><span style="color:orange;">Đang giao dịch</span></td>
+                                            <td data-label="Giá trị đơn hàng">320,800 VNĐ</td>
                                         </tr>
                                     </tbody>
                                 </table>
